@@ -1,7 +1,25 @@
-# Working with GAMS using Jupyter Notebook 
-Mostly you need to run GAMS from terminal/command prompt or GAMS IDE. However, afterwards you need to transfer your results to another environment to analyze them. Purpose of this notebook is to show how you can run GAMS and analyze the resulting data using Jupyter Notebook. 
+# jupygams
+jupygams is a Python package for running GAMS scripts in Jupyter notebook. It allows user to see the logs in the output. Currenly it does not support syntax highlighting.
 
-## Requirements 
-In order to run all the cells in the notebook, you need to have GAMS installed in your computer first. Path of the GAMS executable should be in the path of your system (i.e. you should be able to run GAMS using terminal/command prompt). Also, for reading the results from GDX files, you need to have [pandas](https://pandas.pydata.org/) and [gdxpds](https://github.com/NREL/gdx-pandas) installed. gdxpds requires [GAMS Python API](https://www.gams.com/latest/docs/API_PY_TUTORIAL.html) to be installed. 
+## Usage 
+First, you need to have a valid GAMS installation and GAMS executable should be in your system path. To activate `%%gams` magic commmand you need to import jupygams first:
 
+```python
+import jupygams
+```
+
+Then you can run your GAMS script as follows:
+```gams
+%%gams
+
+* My GAMS script
+set i /1*10/;
+parameter x(i);
+
+```
+
+Currently it is under development, please report the issues.
+
+## TODO
+- Add `setup.py` for allowing package to be installed.
 
